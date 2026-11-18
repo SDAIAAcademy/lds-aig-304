@@ -38,7 +38,7 @@ def working_days(start, end):
 
 
 def main():
-    for rate in (0.10, 0.05, 0.02):
+    for rate in (0.20, 0.10, 0.05, 0.02):  # 20% is practice question q-d3-05
         print(f"zero-defect sample for 95% confidence at {rate:.0%}: {zero_defect_n(rate)}")
     pop, bad = D.OVERRIDES_TOTAL, D.OVERRIDES_BY_UNTRAINED
     for n in (5, 10, 20, 29):
