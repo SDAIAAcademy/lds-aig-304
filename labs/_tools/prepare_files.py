@@ -95,6 +95,11 @@ def name(k):
     return D.PEOPLE[k][0]
 
 
+def days_ar(n):
+    """Arabic count of days: 3 to 10 take the plural, 11 and more the singular accusative."""
+    return f"{n} أيام" if 3 <= n <= 10 else f"{n} يومًا"
+
+
 # --- Shared ------------------------------------------------------------------------------
 def case_brief():
     people = "\n".join(f"- {n}: {r}" for n, r in D.PEOPLE.values())
@@ -284,9 +289,9 @@ def lab_2_3():
 - استعمال بيانات مطايا في تدريب نموذج المورّد: {train}
 - مكان المعالجة: {loc}
 - أدلة اختبار التحيز: {bias}
-- مهلة الإشعار بتغيير النموذج: {notice if notice else "لا التزام"}{" يومًا" if notice else ""}
+- مهلة الإشعار بتغيير النموذج: {days_ar(notice) if notice else "لا التزام"}
 - مهلة الإشعار بالحادثة: {inc}
-- مدة حفظ السجلات لدى المورّد: {logs} يومًا""")
+- مدة حفظ السجلات لدى المورّد: {days_ar(logs)}""")
     text("supplier_sheets.txt", NOTE + "\n\nملخص شروط الموردين الثلاثة (من العقود وأوراق الخدمة؛ المورّدون بلا أسماء في المقرر)\n" + "\n".join(lines))
     text("agent_sheet.txt", f"""
 {NOTE}

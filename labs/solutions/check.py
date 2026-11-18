@@ -97,7 +97,9 @@ def lab_2_1():
     covers = " ".join(t[2] for t in train)
     gap = "التحيز في الفرز الآلي" not in covers
     print(f"  objectives to fix: {weak}; roles: {len(roles)}; bias competence has no training: {gap}")
-    return weak == ["O1", "O3", "O5", "O6"] and gap
+    key = sol("D2_1_objectives.md")
+    fixed = re.findall(r"^| (Od) |[^|]+| يُعاد صوغه", key, re.M)
+    return weak == ["O1", "O3", "O5", "O6"] and gap and fixed == weak
 
 
 def lab_2_2():
@@ -108,12 +110,18 @@ def lab_2_2():
     for cid in D.SOA_BLANK:
         assert D.soa_reason(cid), cid
     high = D.HIGH_RISK_CONTROLS
-    wrong_excl = [c for c in flagged if D.SOA_FLAGGED[c][0] == "مستبعد" and any(c in r[6] for r in D.RISKS)]
-    print(f"  blank rows: {blank}; flagged: {flagged}; flagged exclusions that leave a risk: {wrong_excl}")
+    # an exclusion is wrong when the register or a clause/obligation gives the control a reason
+    wrong_excl = [c for c in flagged if D.SOA_FLAGGED[c][0] == "مستبعد" and D.soa_reason(c)]
+    wrong_status = [c for c in flagged if D.SOA_FLAGGED[c][0] == "مُدرج" and D.SOA_FLAGGED[c][3] != D.status(c)]
+    print(f"  blank rows: {blank}; flagged: {flagged}; wrong exclusions: "
+          f"{[(c, D.soa_reason(c)) for c in wrong_excl]}; wrong status: {[(c, D.status(c)) for c in wrong_status]}")
+    key = sol("D2_2_soa.md")
+    in_key = all(f"| {c} |" in key for c in D.SOA_BLANK + flagged)
     print(f"  high-risk controls ({len(high)}): {high}")
     statuses = {c: D.status(c) for c in D.SOA_BLANK}
     print(f"  reference status of blank rows: {statuses}")
-    return blank == D.SOA_BLANK and flagged == ["MC-14", "MC-23", "MC-31"] and len(high) == 13 and wrong_excl == ["MC-23"]
+    return (blank == D.SOA_BLANK and flagged == ["MC-14", "MC-23", "MC-31"] and len(high) == 13
+            and wrong_excl == ["MC-14", "MC-23"] and wrong_status == ["MC-31"] and in_key)
 
 
 def lab_2_3():
@@ -126,7 +134,8 @@ def lab_2_3():
     _, tools = rows("staff_tools.xlsx")
     breach = [t[0] for t in tools if t[4] != "عام"]
     print(f"  supplier faults: {[(s, f[0]) for s, f in D.SUPPLIER_FAULTS.items()]}; staff tools breaking the rule: {breach}")
-    return breach == ["T2", "T3", "T7"]
+    key = sol("D2_3_suppliers.md")
+    return breach == ["T2", "T3", "T7"] and "T2 وT3 وT7" in key and all(f"| {c} |" in key for c in D.SOA_FOR_LAB_2_3)
 
 
 def lab_2_4():
@@ -139,7 +148,9 @@ def lab_2_4():
         assert p in acc and all(a in names for a in acc), c
     ref_gaps = [g for g in D.GAP_CANDIDATES if g in D.GAPS]
     print(f"  12 controls, 72 subcategories; gaps among the candidates: {ref_gaps}")
-    return len(ref_gaps) == 6 and len(gaps) == 8
+    key = sol("D2_4_crosswalk.md")
+    rows_ok = all(re.search(rf"^| {c} | [^|]+ | {p} |", key, re.M) for c, (p, _) in D.XWALK_REF.items())
+    return len(ref_gaps) == 6 and len(gaps) == 8 and rows_ok
 
 
 def lab_3_1():
