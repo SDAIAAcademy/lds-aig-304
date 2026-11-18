@@ -166,7 +166,9 @@ def lab_3_1():
             if aud[x][2] == D.DEPARTMENT_OF_FUNCTION[a]:
                 conflicts.append((a, x))
     print(f"  {len(prog)} audits; uncovered clause groups: {uncovered}; uncovered high-risk controls: {miss}; conflicts: {conflicts}")
-    return uncovered == ["7"] and miss == ["MC-10", "MC-37"] and conflicts == [("AU-1", "A6"), ("AU-2", "A5")]
+    key = sol("D3_1_programme.md")
+    in_key = all(x in key for x in ("A6", "A5", "البند 7", "MC-10", "MC-37"))
+    return uncovered == ["7"] and miss == ["MC-10", "MC-37"] and conflicts == [("AU-1", "A6"), ("AU-2", "A5")] and in_key
 
 
 def lab_3_2():
@@ -221,8 +223,9 @@ def lab_3_4():
     rate = sum(d <= D.INCIDENT_LIMIT_WORKING_DAYS for d in days) / len(days)
     print(f"  template rows: {len(rs)}; follow-up rate {rate:.1%} against target {D.FOLLOWUP_TARGET:.0%}: action not yet effective")
     print(f"  zero-defect samples at 95%: 10% -> {zero_defect_n(0.10)}, 5% -> {zero_defect_n(0.05)}")
-    key = sol("D3_4_root_cause.md")
-    return len(rs) == 2 and rate < D.FOLLOWUP_TARGET and "88.9%" in key
+    key = sol("D3_4_root_cause.md") + sol("followup_key.md")
+    shown = f"{rate:.1%}"
+    return len(rs) == 2 and rate < D.FOLLOWUP_TARGET and shown == "88.9%" and shown in key and "8 من 9" in key
 
 
 LABS_ = {"1.1": lab_1_1, "1.2": lab_1_2, "1.3": lab_1_3, "1.4": lab_1_4,

@@ -43,6 +43,9 @@ def main():
     pop, bad = D.OVERRIDES_TOTAL, D.OVERRIDES_BY_UNTRAINED
     for n in (5, 10, 20, 29):
         print(f"overrides: {bad} of {pop} by untrained reviewers; sample {n}: P(at least one) = {p_at_least_one(pop, bad, n):.1%}")
+    # parallel example on the Day 3 slides (equipment-rental company): 15 faulty of 300 contracts
+    for n in (5, 10, 20, 29):
+        print(f"slides example: 15 of 300; sample {n}: P(at least one) = {p_at_least_one(300, 15, n):.1%}")
     inc, rec, got = D.INCIDENT_LATE
     print(f"{inc}: {working_days(rec, got)} working days")
     days = [working_days(r, g) for _, r, g in D.FOLLOWUP_INCIDENTS]
