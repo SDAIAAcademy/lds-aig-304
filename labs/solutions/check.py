@@ -181,11 +181,21 @@ def lab_3_2():
     found["NC2"] = [r["change_id"] for r in ch if not r["impact_assessment_ref"] and r["date"] > last_ia]
     sa = records("supplier_assessments.csv")
     found["NC3"] = [r["system"] for r in sa if not r["assessment_ref"]]
+    ia_systems = {r["system"].split()[0] for r in ia}
+    found["NC3"] += [f"{s} بلا تقييم أثر" for s in ("S1", "S2", "S3", "S4", "S5", "S6") if s not in ia_systems]
+    # nothing else in the repository breaks a clause of the five procedures
+    others = []
+    others += [r["system"] for r in sa if r["assessment_ref"] and r["assessment_date"] >= r["contract_date"]]
+    others += [r["change_id"] for r in ch if r["change_id"] != "CH-G-08" and not r["impact_assessment_ref"]]
     tr = records("training_records.csv")
     trained = {r["person_id"] for r in tr if r["programme"] == "مراجعة تجاوز درجة غفوة"}
     ov = records("ghafwa_overrides.csv")
     reviewers = sorted({r["reviewer"] for r in ov})
     found["NC4"] = [s for s in reviewers if s not in trained]
+    done = {r["person_id"]: r["completed"] for r in tr if r["programme"] == "مراجعة تجاوز درجة غفوة"}
+    others += [s for s in reviewers if s in done and done[s] >= min(r["date"] for r in ov if r["reviewer"] == s)]
+    val = {r["validation_report"]: r for r in records("ayyuq_validation_summary.csv")}
+    others += [r["version"] for r in rel if float(val[r["validation_report"]]["within_2h_share"]) < float(val[r["validation_report"]]["threshold"])]
     by_untrained = sum(r["reviewer"] in found["NC4"] for r in ov)
     cs = {r["incident"]: r for r in records("cs_incidents.csv")}
     reg = {r["incident"]: r for r in records("ai_incident_register.csv")}
@@ -201,9 +211,10 @@ def lab_3_2():
     assert "ضمن العتبة" in fair
     for k, v in found.items():
         print(f"  {k}: {v}")
+    print(f"  other breaches of the procedures: {others}")
     print(f"  overrides by untrained reviewers: {by_untrained} of {len(ov)}; random sample of 20 holds one with p = {p_at_least_one(len(ov), by_untrained, 20):.1%}")
     cards = sol("interview_cards.md")
-    return (found["NC1"] == ["3.2"] and found["NC2"] == ["CH-G-08"] and found["NC3"] == ["S5"]
+    return (found["NC1"] == ["3.2"] and found["NC2"] == ["CH-G-08"] and found["NC3"] == ["S5", "S5 بلا تقييم أثر"] and others == []
             and found["NC4"] == ["SUP-04", "SUP-07"] and found["NC5"] == [("INC-0412", 13)]
             and by_untrained == D.OVERRIDES_BY_UNTRAINED and len(ov) == D.OVERRIDES_TOTAL
             and all(n in cards for n in ("عبيد", "فرحان", "فيّ")))

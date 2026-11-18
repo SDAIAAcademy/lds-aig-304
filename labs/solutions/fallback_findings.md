@@ -9,7 +9,7 @@
 |---|---|---|
 | F1 | إصدار من «عَيّوق» نُشر قبل تاريخ اعتماد تقريره | `ayyuq_releases.csv` |
 | F2 | تغيير أضاف مدخلًا جديدًا لـ«غَفوة» دون مرجع تقييم | `ghafwa_changes.csv` و`impact_assessments.csv` |
-| F3 | مورّد بلا تقييم في سجل الموردين | `supplier_assessments.csv` |
+| F3 | مورّد بلا تقييم في سجل الموردين، ونظامه بلا تقييم أثر | `supplier_assessments.csv` و`impact_assessments.csv` |
 | F4 | مراجعو تجاوزات لا يظهرون في سجل التدريب | `training_records.csv` و`ghafwa_overrides.csv` |
 | F5 | حادثة وصلت المكتب بعد تسجيلها بأسابيع | `cs_incidents.csv` و`ai_incident_register.csv` |
 | F6 | تقرير المراقبة الأسبوعي لا يعرض الاتجاه | `ayyuq_weekly_monitoring.csv` |
