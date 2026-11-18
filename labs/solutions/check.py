@@ -98,7 +98,7 @@ def lab_2_1():
     gap = "التحيز في الفرز الآلي" not in covers
     print(f"  objectives to fix: {weak}; roles: {len(roles)}; bias competence has no training: {gap}")
     key = sol("D2_1_objectives.md")
-    fixed = re.findall(r"^| (Od) |[^|]+| يُعاد صوغه", key, re.M)
+    fixed = re.findall(r"^\| (O\d) \|[^|]+\| يُعاد صوغه", key, re.M)
     return weak == ["O1", "O3", "O5", "O6"] and gap and fixed == weak
 
 
@@ -149,7 +149,7 @@ def lab_2_4():
     ref_gaps = [g for g in D.GAP_CANDIDATES if g in D.GAPS]
     print(f"  12 controls, 72 subcategories; gaps among the candidates: {ref_gaps}")
     key = sol("D2_4_crosswalk.md")
-    rows_ok = all(re.search(rf"^| {c} | [^|]+ | {p} |", key, re.M) for c, (p, _) in D.XWALK_REF.items())
+    rows_ok = all(re.search(rf"^\| {c} \| [^|]+ \| {p} \|", key, re.M) for c, (p, _) in D.XWALK_REF.items())
     return len(ref_gaps) == 6 and len(gaps) == 8 and rows_ok
 
 
