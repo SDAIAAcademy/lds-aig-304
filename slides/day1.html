@@ -1,158 +1,453 @@
 <section class="slide title" id="title" data-auto="title">
-  <aside class="notes">REPLACE: الترحيب، والتعريف بنفسك، وسؤال للقاعة يضبط الإيقاع، وإيقاع اليوم</aside>
+  <aside class="notes"><p>رحّب بالقاعة، وعرّف بنفسك بجملة. اسأل: من عمل في نظام إدارة للجودة أو لأمن المعلومات؟ ارفعوا أيديكم. هؤلاء يعرفون نصف المقرر: البنية نفسها، والجديد هو ما يخص الذكاء الاصطناعي.</p><p>إيقاع الأيام: يومان نبني فيهما نظام إدارة لشركة مطايا، ويوم ندققه فيه، ويوم للحزمة والدفاع عنها. المقرر يبني مهارة التطبيق والتدقيق الداخلي، ولا يمنح شهادة مطابقة.</p></aside>
 </section>
 
-<section class="slide" id="agenda" data-auto="agenda"></section>
+<section class="slide" id="agenda" data-auto="agenda">
+  <aside class="notes"><p>أربع جلسات، في كل منها 35 دقيقة شرح و35 دقيقة مختبر. الاستراحات بزر B.</p></aside>
+</section>
+
+<section class="slide" id="setup-check">
+  <div class="kicker">قبل أن نبدأ</div>
+  <h2>ثلاثة أشياء مفتوحة على جهازك</h2>
+  <div class="cols cols-3">
+    <div class="card c-teal"><h4>صفحة المقرر</h4><p class="small mb0">منها تفتح المختبرات والملفات. افتح المختبر 1.1 الآن.</p></div>
+    <div class="card c-cyan"><h4>جدول بيانات</h4><p class="small mb0">أي برنامج يفتح ملفات <span class="en">xlsx</span> ويكتب من اليمين إلى اليسار.</p></div>
+    <div class="card c-purple"><h4>موجز الحالة</h4><p class="small mb0">الملف <span class="en">case_brief.txt</span> قرأته في العمل التحضيري. أبقه مفتوحًا.</p></div>
+  </div>
+  <div class="callout tip mt"><b>الاختبار.</b> افتح <span class="en">clause_map.xlsx</span>: إن رأيت أربعة عشر بندًا من اليمين إلى اليسار فأنت جاهز.</div>
+  <aside class="notes"><p>تحقق بجولة سريعة. الملفات اصطناعية ومصنفة «عامة» لأغراض المقرر، فلا مانع من فتحها في أي أداة. من لا يملك برنامجًا يفتح الملفات في Google Sheets أو LibreOffice.</p></aside>
+</section>
+
+<section class="slide" id="prereq-recap">
+  <div class="kicker">ما نبني عليه</div>
+  <h2>المقرران السابقان أعطياك القطع، وهذا المقرر يركّبها في نظام</h2>
+  <table class="t">
+    <tr><th>من</th><th>ما نأخذه</th><th>أين يظهر هنا</th></tr>
+    <tr><td>LDS-AIG-201</td><td>حصر الأنظمة، ومستويات المخاطر، والأدوار، والسياسة</td><td>النطاق والسياسة اليوم</td></tr>
+    <tr><td>LDS-AIG-204</td><td>سجل المخاطر على مصفوفة الإطار الوطني</td><td>بيان قابلية التطبيق في اليوم 2</td></tr>
+    <tr><td>LDS-AIG-303</td><td>تقييم الأثر ووثائق النظام</td><td>ضوابط تقييم الأثر في البيان</td></tr>
+  </table>
+  <div class="callout note mt">لا نعيد تقدير المخاطر ولا تقييم الأثر هنا. نستعمل نتائجهما، ونسأل: هل يعمل النظام الذي يُنتجهما؟</div>
+  <aside class="notes"><p>شريحة استرجاع واحدة. من لم يأخذ LDS-AIG-204 يكفيه أن يقرأ سجل مخاطر: لكل خطر احتمالية وأثر من 1 إلى 4، والمستوى حاصل الضرب.</p></aside>
+</section>
 
 <!-- الجلسة 1 -->
 
 <section class="slide section" id="s1" data-auto="section" data-session="1"></section>
 
-<section class="slide" id="s1-idea">
-  <div class="kicker">REPLACE: السؤال الذي تجيب عنه الشريحة</div>
-  <h2>REPLACE: فكرة واحدة في جملة</h2>
-  <div class="cols cols-2">
-    <ul class="bullets">
-      <li>REPLACE: ست نقاط على الأكثر، كل منها فكرة تامة</li>
-      <li>REPLACE: أبرز العبارة الأساسية، والأرقام من تشغيل المختبر لا من الذاكرة</li>
-    </ul>
-    <div class="card c-teal"><h4>في دراسة الحالة</h4><p class="small mb0">REPLACE: اربط الفكرة بدراسة الحالة وبياناتها</p></div>
+<section class="slide" id="pdca" data-lo="LO1">
+  <div class="kicker">الدورة</div>
+  <h2>نظام الإدارة دورة لا تنتهي: خطط، نفّذ، تحقق، صحّح</h2>
+  <div class="flow">
+    <div class="step c-teal"><b>خطط</b>السياق والنطاق والسياسة والمخاطر والأهداف</div>
+    <div class="arrow">←</div>
+    <div class="step c-cyan"><b>نفّذ</b>الموارد والكفاءة والتشغيل والضوابط</div>
+    <div class="arrow">←</div>
+    <div class="step c-purple"><b>تحقق</b>القياس والتدقيق الداخلي ومراجعة الإدارة</div>
+    <div class="arrow">←</div>
+    <div class="step c-coral"><b>صحّح</b>عدم المطابقة والإجراء التصحيحي والتحسين</div>
   </div>
-  <div class="callout warn mt"><b>أين يقع الخطأ.</b> REPLACE: الخطأ الذي سيقع فيه المشاركون، وكيف يتعرفون عليه</div>
-  <aside class="notes">REPLACE: ما تقوله، والعرض الحي، والسؤال للقاعة، والخطأ الشائع وحلّه</aside>
+  <div class="callout tip mt">في هذا المقرر: اليوم 1 والنصف الأول من اليوم 2 تخطيط، والبيان تنفيذ، واليوم 3 تحقق وتصحيح.</div>
+  <aside class="notes"><p>الفكرة المحورية: نظام الإدارة لا يضمن أن كل نظام ذكاء اصطناعي جيد. يضمن أن الجهة تعرف ما تفعله، وتقيسه، وتصحح حين يخطئ. اسأل: أي مرحلة تهملها الجهات عادة؟ الجواب الشائع: التصحيح. التدقيق يجد الخلل، ثم يبقى في الأدراج.</p></aside>
 </section>
 
-<section class="slide" id="s1-steps">
-  <div class="kicker">خطوة بخطوة</div>
-  <h2>REPLACE: عملية تظهر خطوة مع كل ضغطة</h2>
-  <div class="flow">
-    <div class="step c-teal"><b>1 · REPLACE: الاسم</b>REPLACE: ما يحدث أولًا</div>
-    <div class="arrow frag" data-frag="b">←</div><div class="step c-cyan frag" data-frag="b"><b>2 · REPLACE: الاسم</b>REPLACE: الجزء التالي</div>
-    <div class="arrow frag" data-frag="c">←</div><div class="step c-coral frag" data-frag="c"><b>3 · REPLACE: الاسم</b>REPLACE: النتيجة</div>
+<section class="slide" id="clause-structure" data-lo="LO1">
+  <div class="kicker">البنية</div>
+  <h2>البنود من 4 إلى 10 هي البنية نفسها في معايير أنظمة الإدارة</h2>
+  <table class="t">
+    <tr><th>البند</th><th>الموضوع</th><th>المرحلة</th></tr>
+    <tr><td>4</td><td>سياق الجهة ونطاق النظام</td><td>خطط</td></tr>
+    <tr><td>5</td><td>القيادة والسياسة والأدوار</td><td>خطط</td></tr>
+    <tr><td>6</td><td>التخطيط: المخاطر والأثر والأهداف</td><td>خطط</td></tr>
+    <tr><td>7</td><td>الدعم: الموارد والكفاءة والتوعية والتواصل والمعلومات الموثقة</td><td>نفّذ</td></tr>
+    <tr><td>8</td><td>التشغيل</td><td>نفّذ</td></tr>
+    <tr><td>9</td><td>تقييم الأداء: القياس والتدقيق الداخلي ومراجعة الإدارة</td><td>تحقق</td></tr>
+    <tr><td>10</td><td>التحسين: عدم المطابقة والإجراء التصحيحي</td><td>صحّح</td></tr>
+  </table>
+  <aside class="notes"><p>البنود 1 إلى 3 تمهيد: النطاق والمراجع والمصطلحات. المتطلبات تبدأ من البند 4. من يعرف معيار الجودة ISO 9001 أو معيار أمن المعلومات ISO/IEC 27001 يجد العناوين نفسها، لأن معايير أنظمة الإدارة تتبع بنية موحدة.</p><p>المصادر: ISO/IEC 42001:2023 (صفحة المعيار العامة)؛ أرقام البنود كما في المقابلة التي تستضيفها NIST، وتؤكد في النسخة المرخّصة.</p></aside>
+</section>
+
+<section class="slide" id="shared-structure" data-lo="LO1">
+  <div class="kicker">نظام واحد أم ثلاثة؟</div>
+  <h2>البنية المشتركة تسمح بنظام إدارة متكامل بدل ثلاثة أنظمة متوازية</h2>
+  <div class="cols cols-3">
+    <div class="card c-teal"><h4>الجودة</h4><p class="small mb0">تدقيق داخلي واحد ومراجعة إدارة واحدة، بمعايير مختلفة لكل نظام.</p></div>
+    <div class="card c-cyan"><h4>أمن المعلومات</h4><p class="small mb0">بيان قابلية تطبيق لضوابط الأمن، كما يوجد بيان لضوابط الذكاء الاصطناعي.</p></div>
+    <div class="card c-purple"><h4>الذكاء الاصطناعي</h4><p class="small mb0">ما يضيفه: الأدوار في دورة الحياة، وتقييم الأثر، وضوابط البيانات والموردين.</p></div>
   </div>
-  <div class="callout tip mt frag"><b>الخلاصة.</b> REPLACE: الجملة التي تبقى في الذاكرة</div>
-  <aside class="notes">اضغط مرة لكل خطوة، وقل ما تضيفه كل خطوة قبل ظهور التالية. REPLACE: المثال الذي تشرحه</aside>
+  <div class="callout warn mt">الدمج يوفر الجهد، لكن نطاق كل نظام يبقى منفصلًا: شهادة أمن المعلومات لا تغطي نظام الذكاء الاصطناعي.</div>
+  <aside class="notes"><p>في الجهات التي تملك نظامًا لأمن المعلومات، أسرع طريق أن يُبنى نظام الذكاء الاصطناعي على إجراءاته: التدقيق الداخلي، والوثائق، ومراجعة الإدارة. لكن احذر من نسخ معايير المخاطر: مخاطر الذكاء الاصطناعي تشمل الضرر على الناس، لا على الأصول وحدها.</p></aside>
+</section>
+
+<section class="slide" id="risk-vs-impact" data-lo="LO1">
+  <div class="kicker">تقييمان مختلفان</div>
+  <h2>تقييم المخاطر يسأل عن أهداف الجهة، وتقييم الأثر يسأل عن الناس</h2>
+  <div class="cols cols-2">
+    <div class="card c-coral"><h4>تقييم المخاطر</h4><p class="small mb0">ما الذي قد يقع فيمنع الجهة من بلوغ أهدافها، وما احتماله وأثره؟ يُخرج سجلًا ومعالجة. إرشاده: ISO/IEC 23894 والإطار الوطني لإدارة مخاطر الذكاء الاصطناعي.</p></div>
+    <div class="card c-teal"><h4>تقييم الأثر</h4><p class="small mb0">ماذا يفعل النظام بالأفراد والفئات والمجتمع، ومنهم من لا يستعمله؟ يُخرج وثيقة أثر لكل نظام. إرشاده: ISO/IEC 42005.</p></div>
+  </div>
+  <div class="callout note mt">نظام الإدارة لا يشرح طريقة التقييم. يطلب أن يجري التقييم، ويحيلك إلى معايير الإرشاد لطريقته.</div>
+  <aside class="notes"><p>هذا هو الناتج LO1. المعيار يطلب النتيجة، وطريقة الوصول إليها في معايير أخرى: ISO/IEC 23894 لإدارة المخاطر، وISO/IEC 42005 لتقييم الأثر، وقد صدر في 2025. وفي المملكة الإطار الوطني لإدارة مخاطر الذكاء الاصطناعي إطار إرشادي يطبقه المقرر LDS-AIG-204.</p><p>المصادر: صفحتا ISO/IEC 42005 وISO/IEC 23894؛ سدايا، أدوات تنظيم سوق الذكاء الاصطناعي (قائمة المواصفات المعتمدة).</p></aside>
+</section>
+
+<section class="slide" id="plan-and-operate" data-lo="LO1">
+  <div class="kicker">مرتان</div>
+  <h2>التقييم يُخطَّط له مرة، ثم يُجرى في التشغيل كلما تغير شيء</h2>
+  <div class="flow">
+    <div class="step c-teal"><b>في التخطيط</b>معايير التقييم وطريقته ومن يجريه</div>
+    <div class="arrow">←</div>
+    <div class="step c-cyan"><b>في التشغيل</b>إجراؤه على فترات مخططة</div>
+    <div class="arrow">←</div>
+    <div class="step c-coral"><b>عند التغيير</b>مصدر بيانات جديد، أو فئة جديدة، أو استعمال جديد</div>
+  </div>
+  <div class="callout warn mt">الجهة التي أجرت التقييم مرة عند الإطلاق ولم تعده بعد التغيير تملك وثيقة، لا تقييمًا.</div>
+  <aside class="notes"><p>اسأل القاعة: في جهتك، متى أُعيد آخر تقييم لنظام بعد تغييره؟ هذا السؤال نفسه سيكون أحد أسئلة التدقيق في اليوم 3.</p></aside>
+</section>
+
+<section class="slide" id="certification-proves" data-lo="LO1">
+  <div class="kicker">الشهادة</div>
+  <h2>الشهادة تثبت أن نظام الإدارة يعمل في نطاقه، لا أن كل نظام آمن</h2>
+  <div class="cols cols-2">
+    <div class="card c-teal"><h4>ما تثبته</h4><ul class="bullets small"><li>أن للجهة نطاقًا وسياسة وأهدافًا وضوابط مبررة</li><li>أن جهة لمنح شهادات المطابقة دققت عينة من الأدلة ووجدتها مطابقة</li><li>أن الجهة تصحح ما تجده</li></ul></div>
+    <div class="card c-coral"><h4>ما لا تثبته</h4><ul class="bullets small"><li>أن كل نموذج دقيق أو منصف</li><li>أن نظامًا خارج النطاق محكوم</li><li>أن الجهة تفي بكل نظام وطني أو أجنبي</li></ul></div>
+  </div>
+  <div class="callout note mt">مثال حقيقي: حصلت سدايا على شهادة ISO/IEC 42001 في 2024، كما تذكر وثيقتها عن أدوات تنظيم السوق.</div>
+  <aside class="notes"><p>اقرأ نطاق أي شهادة قبل أن تثق بها: قد تغطي منتجًا واحدًا أو موقعًا واحدًا. المقرر لا يمنح شهادة مطابقة، وهذا مكتوب في وصفه: يبني مهارة التطبيق والتدقيق الداخلي.</p><p>المصادر: سدايا، أدوات تنظيم سوق الذكاء الاصطناعي، SDAIA-P120، مايو 2025، قسم المواصفات المعتمدة.</p></aside>
+</section>
+
+<section class="slide" id="certificate-reading" data-lo="LO1">
+  <div class="kicker">اقرأ الشهادة</div>
+  <h2>ثلاثة أسئلة قبل أن تقبل شهادة مورّد</h2>
+  <ul class="bullets">
+    <li><b>ما النطاق؟</b> هل يشمل الخدمة التي تشتريها أنت، أم وحدة أخرى عند المورّد؟</li>
+    <li><b>من منحها؟</b> جهة معتمدة لمنح شهادات المطابقة تعمل بقواعد الجهات المانحة، أم مستشار؟</li>
+    <li><b>هل ما زالت سارية؟</b> تاريخ الإصدار، وآخر تدقيق مراقبة، وتاريخ الانتهاء.</li>
+  </ul>
+  <div class="callout tip mt">الشهادة دليل من أدلة تقييم المورّد، لا بديل عنه.</div>
+  <aside class="notes"><p>نعود إلى قواعد الجهات المانحة في الجلسة الأخيرة من اليوم 3. هنا يكفي أن يعرف المشارك أن الشهادة لها نطاق وجهة وتاريخ.</p></aside>
+</section>
+
+<section class="slide" id="check-certificate" data-lo="LO1">
+  <div class="kicker">نقطة تحقق</div>
+  <h2>ماذا تثبت هذه الشهادة؟</h2>
+  <div class="quiz" data-type="single" data-lo="LO1">
+    <p class="lead">شركة افتراضية لتأجير المعدات الثقيلة حصلت على شهادة نظام إدارة الذكاء الاصطناعي، ونطاقها «نموذج التنبؤ بأعطال الرافعات». تريد الشركة أن تكتب في عرضها لعميل أن «كل أنظمة الذكاء الاصطناعي لدينا معتمدة». ما الرد الأدق؟</p>
+    <div class="opts">
+      <div class="opt" data-why="يعدّ الشهادة حكمًا على دقة النموذج، وهي حكم على النظام الذي يديره">الشهادة تثبت أن نموذج الأعطال دقيق ومنصف</div>
+      <div class="opt" data-ok>الشهادة تغطي نظام الإدارة في نطاق نموذج الأعطال وحده</div>
+      <div class="opt" data-why="يمد النطاق إلى كل الشركة لأن الشهادة باسمها، والنطاق مكتوب فيها">العبارة صحيحة ما دامت الشهادة صادرة باسم الشركة كلها</div>
+      <div class="opt" data-why="يخلط بين شهادة المعيار الدولي والالتزام بالأنظمة الوطنية">الشهادة تثبت أن الشركة تفي بكل أنظمة حماية البيانات</div>
+    </div>
+    <div class="callout tip why"><b>لماذا.</b> الشهادة تثبت أن نظام الإدارة يعمل في النطاق المكتوب فيها. ما خارج النطاق لم يُدقق.</div>
+  </div>
+  <aside class="notes"><p>الإجابة: ب. إن اختار كثيرون «باسم الشركة»، اعرض نطاق شهادة مكتوبًا واسأل: أين ورد اسم نظام آخر؟</p></aside>
 </section>
 
 <section class="slide lab" id="lab-1-1" data-auto="lab" data-lab="1.1">
-  <aside class="notes">REPLACE: ما تراقبه أثناء عمل المشاركين، والمشكلات المعتادة، والبديل لمن لم يُنهِ مختبرًا سابقًا</aside>
+  <aside class="notes"><p>مرشد: يجوز سؤال مساعد عن معنى بند، والقرار للمشارك. وزّع نسخة المعيار المرخّصة إن توفرت. بعد المختبر اعرض المرجع من <code>solutions/D1_1_clause_map.md</code>، واسأل عن أكثر بند اختلفوا فيه.</p></aside>
 </section>
 
 <!-- الجلسة 2 -->
 
 <section class="slide section" id="s2" data-auto="section" data-session="2"></section>
 
-<section class="slide" id="s2-idea">
-  <div class="kicker">REPLACE: السؤال الذي تجيب عنه الشريحة</div>
-  <h2>REPLACE: فكرة واحدة في جملة</h2>
+<section class="slide" id="ai-or-not" data-lo="LO2">
+  <div class="kicker">ما يدخل أولًا</div>
+  <h2>نظام الذكاء الاصطناعي يستنتج من البيانات؛ المعادلة الثابتة لا تستنتج</h2>
   <div class="cols cols-2">
-    <ul class="bullets">
-      <li>REPLACE: ست نقاط على الأكثر، كل منها فكرة تامة</li>
-      <li>REPLACE: أبرز العبارة الأساسية، والأرقام من تشغيل المختبر لا من الذاكرة</li>
-    </ul>
-    <div class="card c-teal"><h4>في دراسة الحالة</h4><p class="small mb0">REPLACE: اربط الفكرة بدراسة الحالة وبياناتها</p></div>
+    <div class="card c-teal"><h4>يدخل</h4><ul class="bullets small"><li>نموذج يتنبأ بعطل من بيانات الحساسات</li><li>خدمة تستخرج حقولًا من صورة مستند</li><li>مساعد يكتب ردًا من نص الطلب</li></ul></div>
+    <div class="card c-coral"><h4>لا يدخل</h4><ul class="bullets small"><li>جدول يحسب التكلفة بمعادلات كتبها محلل</li><li>قاعدة «إذا تأخر الدفع 30 يومًا فأرسل تنبيهًا»</li></ul></div>
   </div>
-  <div class="callout warn mt"><b>أين يقع الخطأ.</b> REPLACE: الخطأ الذي سيقع فيه المشاركون، وكيف يتعرفون عليه</div>
-  <aside class="notes">REPLACE: ما تقوله، والعرض الحي، والسؤال للقاعة، والخطأ الشائع وحلّه</aside>
+  <div class="callout warn mt">«فيه أتمتة» لا تكفي، و«يستعمل خدمة توليدية في الخلفية» تكفي، ولو بناه موظف في جدول بيانات.</div>
+  <aside class="notes"><p>الأمثلة كلها من شركة تأجير المعدات الافتراضية، لا من مطايا: المختبر يطلب هذا الحكم على أنظمة مطايا. التعريف التفصيلي في المقرر LDS-AIG-201؛ هنا نحتاج الحكم العملي.</p></aside>
 </section>
 
-<section class="slide" id="s2-steps">
-  <div class="kicker">خطوة بخطوة</div>
-  <h2>REPLACE: عملية تظهر خطوة مع كل ضغطة</h2>
-  <div class="flow">
-    <div class="step c-teal"><b>1 · REPLACE: الاسم</b>REPLACE: ما يحدث أولًا</div>
-    <div class="arrow frag" data-frag="b">←</div><div class="step c-cyan frag" data-frag="b"><b>2 · REPLACE: الاسم</b>REPLACE: الجزء التالي</div>
-    <div class="arrow frag" data-frag="c">←</div><div class="step c-coral frag" data-frag="c"><b>3 · REPLACE: الاسم</b>REPLACE: النتيجة</div>
+<section class="slide" id="three-roles" data-lo="LO2">
+  <div class="kicker">الأدوار</div>
+  <h2>ثلاثة أدوار، وقد تجتمع في جهة واحدة ونظام واحد</h2>
+  <div class="cols cols-3">
+    <div class="card c-teal"><h4>المطوّر</h4><p class="small mb0">يبني النظام أو يغيّره جوهريًا: يدرّبه أو يعيد تدريبه أو يغيّر غرضه.</p></div>
+    <div class="card c-cyan"><h4>مقدم الخدمة</h4><p class="small mb0">يتيح النظام لغيره: يبيعه أو يقدمه خدمة.</p></div>
+    <div class="card c-purple"><h4>المستخدم</h4><p class="small mb0">يستعمل النظام في عمله ويتخذ بنتيجته قرارًا.</p></div>
   </div>
-  <div class="callout tip mt frag"><b>الخلاصة.</b> REPLACE: الجملة التي تبقى في الذاكرة</div>
-  <aside class="notes">اضغط مرة لكل خطوة، وقل ما تضيفه كل خطوة قبل ظهور التالية. REPLACE: المثال الذي تشرحه</aside>
+  <div class="callout note mt">الدور يحدد الضوابط: المطوّر يحتاج ضوابط البيانات والتحقق، والمستخدم يحتاج ضوابط الاستعمال والموردين.</div>
+  <aside class="notes"><p>شركة تأجير المعدات التي تبني نموذج الأعطال وتبيعه لعملائها مطوّر ومقدم خدمة. والتي تشتري خدمة قراءة فواتير مستخدم. والتي تعيد تدريب الخدمة المشتراة على بياناتها صارت مطوّرًا للنسخة المعدّلة.</p><p>أسماء الأدوار الثلاثة هنا تبسيط المقرر؛ ارجع إلى النسخة المرخّصة لصيغة المعيار.</p></aside>
+</section>
+
+<section class="slide" id="role-matrix" data-lo="LO2" data-read="scaled">
+  <div class="kicker">مثال موازٍ</div>
+  <h2>شركة تأجير المعدات: خمسة أنظمة وأدوارها</h2>
+  <table class="t small">
+    <tr><th>النظام</th><th>مطوّر</th><th>مقدم خدمة</th><th>مستخدم</th><th>النطاق</th></tr>
+    <tr><td>نموذج أعطال الرافعات، يُباع للعملاء</td><td>نعم</td><td>نعم</td><td>نعم</td><td>داخل</td></tr>
+    <tr><td>خدمة قراءة الفواتير المشتراة</td><td>لا</td><td>لا</td><td>نعم</td><td>داخل</td></tr>
+    <tr><td>الخدمة نفسها بعد إعادة تدريبها على فواتير الشركة</td><td>نعم</td><td>لا</td><td>نعم</td><td>داخل</td></tr>
+    <tr><td>جدول تسعير بمعادلات ثابتة</td><td>لا</td><td>لا</td><td>لا</td><td>خارج: ليس ذكاءً اصطناعيًا</td></tr>
+    <tr><td>كاميرات المرور التي تشغلها البلدية</td><td>لا</td><td>لا</td><td>لا</td><td>خارج: لا دور للشركة</td></tr>
+  </table>
+  <aside class="notes"><p>هذا هو شكل المختبر 1.2، على شركة أخرى. اطلب من القاعة أن تقرأ السطر الثالث: لماذا صار للشركة دور المطوّر؟ لأن إعادة التدريب غيّرت النظام.</p></aside>
+</section>
+
+<section class="slide" id="affected-non-users" data-lo="LO2">
+  <div class="kicker">من يتأثر</div>
+  <h2>المتأثرون أكثر من المستخدمين</h2>
+  <ul class="bullets">
+    <li><b>المستخدم</b> يرى الشاشة: موظف الجدولة، أو موظف التوظيف</li>
+    <li><b>المتأثر</b> يعيش القرار: العامل الذي قلّت نوباته، والمتقدم الذي لم يُرَ ملفه</li>
+    <li><b>الطرف الثالث</b> لا علاقة له بالجهة: مستعمل الطريق، ومستلم الشحنة</li>
+  </ul>
+  <div class="callout warn mt">نطاق كُتب من أعين المستخدمين وحدهم يُسقط من لا يشتكي: من لم يعرف أن نظامًا قرر عنه.</div>
+  <aside class="notes"><p>هذا ما يقصده بيان الاستخدام المسؤول في المقرر: الضرر على المتأثرين والإنصاف والخصوصية تدخل معايير المخاطر منذ النطاق. سنعود إليها في كل يوم، وفي التدقيق نسأل: هل عاين المدقق أدلة عن المتأثرين؟</p></aside>
+</section>
+
+<section class="slide" id="inventory-first" data-lo="LO2">
+  <div class="kicker">من أين تأتي القائمة</div>
+  <h2>قائمة الأنظمة تأتي من الحصر، والحصر لا يكتمل من الإدارات وحدها</h2>
+  <div class="cols cols-2">
+    <ul class="bullets">
+      <li>العقود: خدمات تتضمن ذكاءً اصطناعيًا ولو لم يُذكر في اسمها</li>
+      <li>المشتريات: وحدة إضافية في منصة كبيرة</li>
+      <li>الموظفون: أدوات بنوها بأنفسهم بخدمة توليدية</li>
+    </ul>
+    <div class="card tint c-navy"><h4>من LDS-AIG-201</h4><p class="small mb0">الحصر من المقابلات والعقود وسجلات الشبكة، والبحث عمّا لم يُصرّح عنه.</p></div>
+  </div>
+  <aside class="notes"><p>شريحة استرجاع. لا نعيد تمرين الحصر: موجز مطايا يعطيكم ثمانية أنظمة وأدوات، والمهمة الحكم عليها.</p></aside>
+</section>
+
+<section class="slide" id="check-fine-tune" data-lo="LO2">
+  <div class="kicker">نقطة تحقق</div>
+  <h2>ما دور الشركة الآن؟</h2>
+  <div class="quiz" data-type="single" data-lo="LO2">
+    <p class="lead">شركة تأجير المعدات تشتري خدمة لتصنيف رسائل العملاء. قرر فريقها أن يعيد تدريب النموذج كل شهر على رسائلها هي، ثم يستعمله في توزيع الرسائل. ما دورها في النسخة المعدّلة؟</p>
+    <div class="opts">
+      <div class="opt" data-why="يبقي الدور على ما كان عند الشراء، وإعادة التدريب غيّرت النظام">مستخدم فقط، لأن المورّد هو الذي بنى النموذج الأصلي</div>
+      <div class="opt" data-why="يعدّ الاستعمال الداخلي تقديمًا للخدمة، ومقدم الخدمة يتيح النظام لغيره">مقدم خدمة ومستخدم، لأنها تتيح النتيجة لفرقها</div>
+      <div class="opt" data-ok>مطوّر ومستخدم، لأن إعادة التدريب تغيّر النظام</div>
+      <div class="opt" data-why="يظن أن العقد ينقل المسؤولية كلها، والعقد يوزعها فقط">لا دور لها، لأن عقد الخدمة يحمّل المورّد المسؤولية</div>
+    </div>
+    <div class="callout tip why"><b>لماذا.</b> من يعيد تدريب النموذج على بياناته يغيّر سلوكه، فيصير مطوّرًا للنسخة الجديدة ويحتاج ضوابط البيانات والتحقق.</div>
+  </div>
+  <aside class="notes"><p>الإجابة: ج. هذا هو التمرين الإضافي في المختبر 1.2 على مثال آخر، فلا بأس أن يُناقش.</p></aside>
 </section>
 
 <section class="slide lab" id="lab-1-2" data-auto="lab" data-lab="1.2">
-  <aside class="notes">REPLACE: ما تراقبه أثناء عمل المشاركين، والمشكلات المعتادة، والبديل لمن لم يُنهِ مختبرًا سابقًا</aside>
+  <aside class="notes"><p>المختبر لا يحتاج أي مساعد ذكي. راقب من يكتب «مورّد» دورًا لمطايا، ومن يُخرج نظامًا لأنه «تجربة». بعد المختبر: عدّ في القاعة كم نظامًا رُشح للنطاق، واعرض المرجع.</p></aside>
 </section>
 
 <!-- الجلسة 3 -->
 
 <section class="slide section" id="s3" data-auto="section" data-session="3"></section>
 
-<section class="slide" id="s3-idea">
-  <div class="kicker">REPLACE: السؤال الذي تجيب عنه الشريحة</div>
-  <h2>REPLACE: فكرة واحدة في جملة</h2>
+<section class="slide" id="context-issues" data-lo="LO2">
+  <div class="kicker">السياق</div>
+  <h2>النطاق يُكتب بعد السياق: ما الذي يضغط على الجهة من الداخل والخارج؟</h2>
   <div class="cols cols-2">
-    <ul class="bullets">
-      <li>REPLACE: ست نقاط على الأكثر، كل منها فكرة تامة</li>
-      <li>REPLACE: أبرز العبارة الأساسية، والأرقام من تشغيل المختبر لا من الذاكرة</li>
-    </ul>
-    <div class="card c-teal"><h4>في دراسة الحالة</h4><p class="small mb0">REPLACE: اربط الفكرة بدراسة الحالة وبياناتها</p></div>
+    <div class="card c-teal"><h4>من الخارج</h4><ul class="bullets small"><li>الأنظمة والضوابط الوطنية</li><li>عقود العملاء وطلباتهم</li><li>توقعات المتأثرين</li></ul></div>
+    <div class="card c-cyan"><h4>من الداخل</h4><ul class="bullets small"><li>الأنظمة التي تبنيها والتي تشتريها</li><li>الوظائف التي تستعملها</li><li>نضج الإجراءات القائمة</li></ul></div>
   </div>
-  <div class="callout warn mt"><b>أين يقع الخطأ.</b> REPLACE: الخطأ الذي سيقع فيه المشاركون، وكيف يتعرفون عليه</div>
-  <aside class="notes">REPLACE: ما تقوله، والعرض الحي، والسؤال للقاعة، والخطأ الشائع وحلّه</aside>
+  <div class="callout note mt">أصحاب المصلحة جزء من السياق: من له متطلب على النظام، ومن يتأثر به.</div>
+  <aside class="notes"><p>البند 4.1 يطلب فهم الجهة وسياقها، والبند 4.3 يطلب تحديد النطاق. وفي البند 4 أيضًا فهم أصحاب المصلحة واحتياجاتهم (تحقق من رقمه في النسخة المرخّصة). الترتيب مقصود: لا يُكتب النطاق قبل أن تعرف ما يُطلب منك.</p></aside>
 </section>
 
-<section class="slide" id="s3-steps">
-  <div class="kicker">خطوة بخطوة</div>
-  <h2>REPLACE: عملية تظهر خطوة مع كل ضغطة</h2>
-  <div class="flow">
-    <div class="step c-teal"><b>1 · REPLACE: الاسم</b>REPLACE: ما يحدث أولًا</div>
-    <div class="arrow frag" data-frag="b">←</div><div class="step c-cyan frag" data-frag="b"><b>2 · REPLACE: الاسم</b>REPLACE: الجزء التالي</div>
-    <div class="arrow frag" data-frag="c">←</div><div class="step c-coral frag" data-frag="c"><b>3 · REPLACE: الاسم</b>REPLACE: النتيجة</div>
+<section class="slide" id="obligations" data-lo="LO2">
+  <div class="kicker">الالتزامات</div>
+  <h2>ثلاثة أنواع من الالتزامات تدخل كل نطاق في المملكة</h2>
+  <table class="t">
+    <tr><th>النوع</th><th>مثال</th><th>ما يعنيه للنطاق</th></tr>
+    <tr><td>نظام</td><td>نظام حماية البيانات الشخصية</td><td>كل نظام يعالج بيانات أشخاص</td></tr>
+    <tr><td>ضوابط وطنية</td><td>ضوابط ومواصفات إدارة البيانات الوطنية وحوكمتها وحماية البيانات الشخصية</td><td>تسري على الجهات العامة وعلى شركائها الذين يحفظون بيانات حكومية</td></tr>
+    <tr><td>عقد</td><td>مستوى خدمة لعميل</td><td>الأنظمة التي يذكرها العقد</td></tr>
+  </table>
+  <aside class="notes"><p>نقطة يغفل عنها القطاع الخاص: الضوابط الوطنية لإدارة البيانات تنص على أن نطاقها يمتد إلى شركاء الأعمال الذين يتعاملون مع بيانات حكومية، على كل البيانات الحكومية في عهدتهم. شركة خاصة تنقل شحنات لجهة حكومية قد تكون منهم. ونصها أن الجهات تجري تدقيق امتثال سنويًا وترفع تقريره إلى المكتب في الربع الثالث.</p><p>المصادر: مكتب إدارة البيانات الوطنية، ضوابط ومواصفات إدارة البيانات الوطنية وحوكمتها وحماية البيانات الشخصية، الإصدار 1.5، قسما النطاق والامتثال.</p></aside>
+</section>
+
+<section class="slide" id="boundaries" data-lo="LO2">
+  <div class="kicker">الحدود</div>
+  <h2>النطاق يُكتب بأربعة حدود، لا بقائمة أنظمة</h2>
+  <div class="cols cols-4">
+    <div class="card c-teal"><h4>الأدوار</h4><p class="small mb0">مطوّر، مقدم خدمة، مستخدم</p></div>
+    <div class="card c-cyan"><h4>الأنظمة</h4><p class="small mb0">المبنية والمشتراة وأدوات الموظفين</p></div>
+    <div class="card c-purple"><h4>الوظائف</h4><p class="small mb0">كل وظيفة تبني أو تشتري أو تستعمل</p></div>
+    <div class="card c-coral"><h4>المواقع</h4><p class="small mb0">حيث يعمل النظام ومن يستعمله</p></div>
   </div>
-  <div class="callout tip mt frag"><b>الخلاصة.</b> REPLACE: الجملة التي تبقى في الذاكرة</div>
-  <aside class="notes">اضغط مرة لكل خطوة، وقل ما تضيفه كل خطوة قبل ظهور التالية. REPLACE: المثال الذي تشرحه</aside>
+  <div class="callout warn mt">نطاق يذكر الأنظمة وينسى المشتريات يترك ضابط الموردين بلا مالك.</div>
+  <aside class="notes"><p>اسأل: لو كان نطاق شركة المعدات «علم البيانات وخدمة العملاء» فقط، من يقيّم موردي الخدمات؟ لا أحد داخل النطاق. هذا ما يجعل الحد الوظيفي مهمًا.</p></aside>
+</section>
+
+<section class="slide" id="exclusion-test" data-lo="LO2">
+  <div class="kicker">الاستثناء</div>
+  <h2>سؤالان يحسمان كل استثناء</h2>
+  <div class="flow">
+    <div class="step c-teal"><b>1 · هل هو ذكاء اصطناعي؟</b>إن لم يكن، فالاستثناء مبرر</div>
+    <div class="arrow">←</div>
+    <div class="step c-cyan"><b>2 · هل للجهة دور فيه؟</b>تطوير أو تقديم أو استعمال؛ إن لم يكن، فالاستثناء مبرر</div>
+    <div class="arrow">←</div>
+    <div class="step c-coral"><b>غير ذلك</b>يدخل النطاق مهما قيل عنه</div>
+  </div>
+  <div class="callout warn mt">«تجربة»، و«صغير»، و«المورّد مسؤول»، و«سنضيفه لاحقًا» ليست أسبابًا ما دام النظام يمس الناس اليوم.</div>
+  <aside class="notes"><p>الاستثناءات الإدارية هي أكثر ما يجده المدقق الخارجي في النطاق. المدقق يسأل: هل يستعمل هذا النظام في قرار حقيقي اليوم؟ إن كان الجواب نعم، فالاستثناء يُخرج خطرًا لا عملًا.</p></aside>
+</section>
+
+<section class="slide" id="scope-statement" data-lo="LO2">
+  <div class="kicker">البيان</div>
+  <h2>بيان نطاق جيد يقرؤه عميل في دقيقة</h2>
+  <div class="card tint c-navy"><p class="small mb0">«يشمل نظام إدارة الذكاء الاصطناعي في شركة تأجير المعدات تطوير نموذج أعطال الرافعات وتقديمه للعملاء، واستعمال خدمة قراءة الفواتير، في المقر والمستودعين، وفي وظائف الصيانة والمالية والمشتريات. يُستثنى جدول التسعير لأنه ليس نظام ذكاء اصطناعي. يعدّه مكتب الحوكمة ويعتمده الرئيس التنفيذي.»</p></div>
+  <ul class="bullets mt">
+    <li>الأدوار والأنظمة والوظائف والمواقع في جملة واحدة</li>
+    <li>كل استثناء بسببه</li>
+    <li>من يعدّ ومن يعتمد: شخصان مختلفان</li>
+  </ul>
+  <aside class="notes"><p>مثال من الشركة الموازية. في المختبر تكتب بيان مطايا. ذكّر بفصل الواجبات: من يكتب البيان لا يعتمده.</p></aside>
+</section>
+
+<section class="slide" id="check-exclusion" data-lo="LO2">
+  <div class="kicker">نقطة تحقق</div>
+  <h2>أي استثناء يقوم؟</h2>
+  <div class="quiz" data-type="single" data-lo="LO2">
+    <p class="lead">في مسودة نطاق شركة تأجير المعدات أربعة استثناءات. أيها مبرر؟</p>
+    <div class="opts">
+      <div class="opt" data-why="«تجربة» وصف إداري؛ النموذج يقرر في صيانة حقيقية اليوم">نموذج أولويات الصيانة لأنه تجربة في فرعين</div>
+      <div class="opt" data-why="ينقل المسؤولية بالعقد، والشركة تستعمل النتيجة في قرار يمس المتقدمين">فرز المتقدمين لأن المورّد مسؤول عن وحدته</div>
+      <div class="opt" data-why="يؤجل نظامًا يعمل الآن، والتأجيل لا يوقف أثره">مساعد العملاء لأنه سيُضاف في الإصدار القادم</div>
+      <div class="opt" data-ok>نظام إشارات المرور الذي تشغله البلدية قرب المستودع</div>
+    </div>
+    <div class="callout tip why"><b>لماذا.</b> لا تطوره الشركة ولا تقدمه ولا تستعمله. الثلاثة الأخرى أنظمة تستعملها الشركة في قرارات تمس الناس الآن.</div>
+  </div>
+  <aside class="notes"><p>الإجابة: د. لاحظ أن ثلاثة من الأسباب تبدو معقولة في اجتماع، وكلها تسقط بالسؤال الثاني.</p></aside>
 </section>
 
 <section class="slide lab" id="lab-1-3" data-auto="lab" data-lab="1.3">
-  <aside class="notes">REPLACE: ما تراقبه أثناء عمل المشاركين، والمشكلات المعتادة، والبديل لمن لم يُنهِ مختبرًا سابقًا</aside>
+  <aside class="notes"><p>يبدأ المختبر من مسودة المستشار، لا من نتيجة 1.2. الذكاء الاصطناعي مرشد. راقب من يكتب النطاق قائمة أنظمة فقط: اطلب منه الحدود الأربعة. بعد المختبر اعرض المرجع، وركّز على أدوات الموظفين التي غابت عن المسودة.</p></aside>
 </section>
 
 <!-- الجلسة 4 -->
 
 <section class="slide section" id="s4" data-auto="section" data-session="4"></section>
 
-<section class="slide" id="s4-idea">
-  <div class="kicker">REPLACE: السؤال الذي تجيب عنه الشريحة</div>
-  <h2>REPLACE: فكرة واحدة في جملة</h2>
+<section class="slide" id="policy-vs-procedure" data-lo="LO2">
+  <div class="kicker">السياسة</div>
+  <h2>السياسة تلزم، والإجراء يشرح كيف</h2>
   <div class="cols cols-2">
-    <ul class="bullets">
-      <li>REPLACE: ست نقاط على الأكثر، كل منها فكرة تامة</li>
-      <li>REPLACE: أبرز العبارة الأساسية، والأرقام من تشغيل المختبر لا من الذاكرة</li>
-    </ul>
-    <div class="card c-teal"><h4>في دراسة الحالة</h4><p class="small mb0">REPLACE: اربط الفكرة بدراسة الحالة وبياناتها</p></div>
+    <div class="card c-teal"><h4>في السياسة</h4><ul class="bullets small"><li>المبادئ والالتزامات</li><li>إطار الأهداف</li><li>المالك والاعتماد والمراجعة</li></ul></div>
+    <div class="card c-coral"><h4>في الإجراء</h4><ul class="bullets small"><li>الأرقام والعتبات</li><li>النماذج والمهل</li><li>من يفعل ماذا وبأي ترتيب</li></ul></div>
   </div>
-  <div class="callout warn mt"><b>أين يقع الخطأ.</b> REPLACE: الخطأ الذي سيقع فيه المشاركون، وكيف يتعرفون عليه</div>
-  <aside class="notes">REPLACE: ما تقوله، والعرض الحي، والسؤال للقاعة، والخطأ الشائع وحلّه</aside>
+  <div class="callout warn mt">سياسة فيها عتبة دقة تتغير كل ربع تحتاج اعتماد الإدارة العليا كل ربع، فتُترك قديمة.</div>
+  <aside class="notes"><p>المثال الموازي: سياسة شركة المعدات تقول «لا يُنشر نموذج حتى تتجاوز دقته 85%». هذا مكانه إجراء الإصدار. في السياسة يكفي: «لا يُنشر نموذج قبل التحقق منه واعتماد نتيجته».</p></aside>
 </section>
 
-<section class="slide" id="s4-steps">
-  <div class="kicker">خطوة بخطوة</div>
-  <h2>REPLACE: عملية تظهر خطوة مع كل ضغطة</h2>
-  <div class="flow">
-    <div class="step c-teal"><b>1 · REPLACE: الاسم</b>REPLACE: ما يحدث أولًا</div>
-    <div class="arrow frag" data-frag="b">←</div><div class="step c-cyan frag" data-frag="b"><b>2 · REPLACE: الاسم</b>REPLACE: الجزء التالي</div>
-    <div class="arrow frag" data-frag="c">←</div><div class="step c-coral frag" data-frag="c"><b>3 · REPLACE: الاسم</b>REPLACE: النتيجة</div>
+<section class="slide" id="policy-checklist" data-lo="LO2">
+  <div class="kicker">قائمة المراجعة</div>
+  <h2>ثمانية أسئلة تراجع بها أي سياسة</h2>
+  <table class="t small">
+    <tr><th>#</th><th>السؤال</th></tr>
+    <tr><td>C1</td><td>هل تناسب غرض الجهة وأدوارها؟</td></tr>
+    <tr><td>C2</td><td>هل تعطي إطارًا لوضع الأهداف؟</td></tr>
+    <tr><td>C3</td><td>هل تلتزم بالوفاء بالمتطلبات المنطبقة؟</td></tr>
+    <tr><td>C4</td><td>هل تلتزم بالتحسين المستمر؟</td></tr>
+    <tr><td>C5</td><td>هل تسمّي المبادئ التي تلتزم بها؟</td></tr>
+    <tr><td>C6</td><td>هل تحيل إلى سياسات الجهة الأخرى؟</td></tr>
+    <tr><td>C7</td><td>هل لها مالك ومعتمد ومدة مراجعة؟</td></tr>
+    <tr><td>C8</td><td>هل تُبلَّغ للموظفين وتتاح لأصحاب المصلحة؟</td></tr>
+  </table>
+  <aside class="notes"><p>القائمة قاعدة المقرر، مواءمة مع بند السياسة 5.2 والضوابط المرجعية للسياسات. لا تقرأ نص المعيار من الذاكرة؛ تحقق من النسخة المرخّصة إن سأل أحد عن صيغة البند.</p></aside>
+</section>
+
+<section class="slide" id="seven-principles" data-lo="LO2">
+  <div class="kicker">المبادئ</div>
+  <h2>سياسة في المملكة تسمّي مبادئ أخلاقيات الذكاء الاصطناعي السبعة</h2>
+  <div class="cols cols-2">
+    <ul class="bullets">
+      <li>النزاهة والإنصاف</li>
+      <li>الخصوصية والأمن</li>
+      <li>الموثوقية والسلامة</li>
+      <li>الشفافية والقابلية للتفسير</li>
+    </ul>
+    <ul class="bullets">
+      <li>المساءلة والمسؤولية</li>
+      <li>الإنسانية</li>
+      <li>المنافع الاجتماعية والبيئية</li>
+    </ul>
   </div>
-  <div class="callout tip mt frag"><b>الخلاصة.</b> REPLACE: الجملة التي تبقى في الذاكرة</div>
-  <aside class="notes">اضغط مرة لكل خطوة، وقل ما تضيفه كل خطوة قبل ظهور التالية. REPLACE: المثال الذي تشرحه</aside>
+  <div class="callout note mt">التسمية لا تكفي: كل مبدأ يحتاج ضابطًا في البيان يجعله قابلًا للتدقيق.</div>
+  <aside class="notes"><p>المبادئ السبعة كما تذكرها سدايا في أداة التقييم الذاتي لأخلاقيات الذكاء الاصطناعي، وأصلها وثيقة مبادئ أخلاقيات الذكاء الاصطناعي. اسأل: أي مبدأ يصعب تدقيقه؟ الجواب الشائع: الإنسانية. لذلك نربطه بضابط المراجعة البشرية.</p><p>المصادر: سدايا، أدوات تنظيم سوق الذكاء الاصطناعي (SDAIA-P120)، قسم التقييم الذاتي؛ مبادئ أخلاقيات الذكاء الاصطناعي.</p></aside>
+</section>
+
+<section class="slide" id="staff-genai-rule" data-lo="LO2">
+  <div class="kicker">أدوات الموظفين</div>
+  <h2>قاعدة البيانات العامة: ما لم يُصنّف «عامًا» لا يدخل أداة توليدية</h2>
+  <div class="cols cols-2">
+    <div class="card c-teal"><h4>النص الوطني</h4><p class="small mb0">مبادئ سدايا للجهات الحكومية: يجب على العاملين في الجهات الحكومية عدم إدخال أي بيانات تصنف «مقيد فأعلى» (مقيد، وسري، وسري للغاية)، وقصر الاستعمال على البيانات المصنفة «عامة».</p></div>
+    <div class="card c-purple"><h4>قاعدة الجهة</h4><p class="small mb0">شركة خاصة ليست مخاطبة بالنص الحكومي، لكنها تستطيع أن تتبناه قاعدة لها. حينها هو قاعدة الجهة، ويُكتب كذلك.</p></div>
+  </div>
+  <div class="callout warn mt">منع كل الأدوات دون استثناء لا يُطبَّق: يدفع الموظفين إلى أدوات لا يراها أحد.</div>
+  <aside class="notes"><p>فرّق بوضوح بين النص الوطني ومن يخاطبه، وقاعدة الجهة الخاصة. في مطايا هذه قاعدة الشركة، لا التزام وطني عليها. الصيغة الوطنية من مبادئ الذكاء الاصطناعي التوليدي للجهات الحكومية، النسخة العربية، فقرة واجبات المستخدمين.</p><p>المصادر: سدايا، مبادئ الذكاء الاصطناعي التوليدي للجهات الحكومية.</p></aside>
+</section>
+
+<section class="slide" id="owner-approver" data-lo="LO2">
+  <div class="kicker">من يملك ومن يعتمد</div>
+  <h2>مالك السياسة يحافظ عليها، والإدارة العليا تعتمدها</h2>
+  <div class="flow">
+    <div class="step c-teal"><b>يعدّ</b>مكتب الحوكمة</div>
+    <div class="arrow">←</div>
+    <div class="step c-cyan"><b>يراجع</b>الشؤون القانونية والخصوصية وأمن المعلومات</div>
+    <div class="arrow">←</div>
+    <div class="step c-purple"><b>يعتمد</b>الرئيس التنفيذي</div>
+    <div class="arrow">←</div>
+    <div class="step c-coral"><b>يُراجع</b>كل سنة في مراجعة الإدارة</div>
+  </div>
+  <div class="callout tip mt">من يكتب لا يعتمد وحده. هذا فصل الواجبات، وسنراه في كل مخرج من مخرجات المقرر.</div>
+  <aside class="notes"><p>قل للقاعة: سنطلب في كل حل مرجعي أن يظهر من يعدّ ومن يعتمد، ومن ينفذ ومن يتحقق. المدقق يبدأ من هذا السؤال.</p></aside>
+</section>
+
+<section class="slide" id="vague-policy" data-lo="LO2">
+  <div class="kicker">مثال موازٍ</div>
+  <h2>ثلاثة أسطر من سياسة شركة المعدات، وما يحدث لكل منها</h2>
+  <table class="t small">
+    <tr><th>السطر</th><th>الحكم</th></tr>
+    <tr><td>«نستعمل الذكاء الاصطناعي بمسؤولية»</td><td>يُعاد صوغه: أي مسؤولية؟ سمِّ المبادئ</td></tr>
+    <tr><td>«يُراجع المهندس كل توصية صيانة قبل تنفيذها»</td><td>يبقى: مبدأ مراجعة بشرية</td></tr>
+    <tr><td>«تُرسل الحوادث بالنموذج F-7 خلال يومين»</td><td>ينتقل إلى إجراء، ويبقى التزام عام بالإبلاغ</td></tr>
+  </table>
+  <aside class="notes"><p>هذه أنماط ستجدها في مسودة مطايا، على أسطر مختلفة. لا تحل المختبر هنا.</p></aside>
+</section>
+
+<section class="slide" id="check-policy-line" data-lo="LO2">
+  <div class="kicker">نقطة تحقق</div>
+  <h2>أي سطر مكانه إجراء لا سياسة؟</h2>
+  <div class="quiz" data-type="single" data-lo="LO2">
+    <p class="lead">هذه أربعة أسطر من مسودة سياسة شركة تأجير المعدات. أيها ينتقل إلى إجراء؟</p>
+    <div class="opts">
+      <div class="opt" data-why="هذا التزام يطلبه كل نظام إدارة، فمكانه السياسة">تلتزم الشركة بالتحسين المستمر لنظام إدارة الذكاء الاصطناعي</div>
+      <div class="opt" data-ok>يعيد فريق البيانات اختبار نموذج الأعطال كل أسبوعين، ويوقفه إذا زاد الخطأ على 8%</div>
+      <div class="opt" data-why="مبدأ عام بلا رقم ولا مهلة، فمكانه السياسة">لا يُتخذ قرار يمس عاملًا بنتيجة آلية دون مراجعة بشرية</div>
+      <div class="opt" data-why="الإطار العام للأهداف من عمل السياسة، والأهداف نفسها تُكتب في ورقة الأهداف">تضع الشركة كل عام أهدافًا قابلة للقياس للذكاء الاصطناعي</div>
+    </div>
+    <div class="callout tip why"><b>لماذا.</b> التكرار والعتبة يتغيران مع النموذج، فمكانهما إجراء يملكه فريق البيانات وتعدّله دون اعتماد الإدارة العليا.</div>
+  </div>
+  <aside class="notes"><p>الإجابة: ب. اسأل: من يعتمد تغيير العتبة من 8% إلى 6%؟ إن كانت في السياسة، فالرئيس التنفيذي. هذا ما يجعلها قديمة.</p></aside>
 </section>
 
 <section class="slide lab" id="lab-1-4" data-auto="lab" data-lab="1.4">
-  <aside class="notes">REPLACE: ما تراقبه أثناء عمل المشاركين، والمشكلات المعتادة، والبديل لمن لم يُنهِ مختبرًا سابقًا</aside>
+  <aside class="notes"><p>الذكاء الاصطناعي مرشد في الصياغة؛ الحكم للمشارك. بعد المختبر اعرض الأحكام الثمانية من المرجع، ثم اقرأ بصوت عالٍ صياغة الالتزامات الناقصة من مشاركين أو ثلاثة.</p></aside>
 </section>
 
 <section class="slide" id="wrap-up">
-  <div class="kicker">خلاصة اليوم 1</div>
-  <h2>ثلاثة أمور تبقى معك</h2>
+  <div class="kicker">ختام اليوم 1</div>
+  <h2>ثلاثة أشياء تبقى</h2>
   <div class="cols cols-3">
-    <div class="card c-teal"><h4>تذكّر</h4><p class="small mb0">REPLACE: فكرة يحتفظ بها المشاركون</p></div>
-    <div class="card c-coral"><h4>تذكّر</h4><p class="small mb0">REPLACE: فكرة يحتفظ بها المشاركون</p></div>
-    <div class="card c-purple"><h4>تذكّر</h4><p class="small mb0">REPLACE: فكرة يحتفظ بها المشاركون</p></div>
+    <div class="card c-teal"><h4>البنية مشتركة</h4><p class="small mb0">البنود من 4 إلى 10، والجديد ما يخص الذكاء الاصطناعي: الأدوار والأثر والموردون.</p></div>
+    <div class="card c-cyan"><h4>النطاق بالأدوار</h4><p class="small mb0">الاستثناء يقوم بسؤالين فقط: ليس ذكاءً اصطناعيًا، أو لا دور للجهة فيه.</p></div>
+    <div class="card c-purple"><h4>السياسة تلزم</h4><p class="small mb0">الأرقام في الإجراءات، ومن يكتب لا يعتمد.</p></div>
   </div>
+  <aside class="notes"><p>اسأل كل مشارك عن جملة واحدة غيّرت رأيه اليوم. اجمعها: هي مادة مراجعة صباح الغد.</p></aside>
 </section>
 
-<section class="slide dark" id="next" data-label="التالي">
-  <div class="kicker">التالي</div>
-  <h2>اليوم 2: REPLACE: موضوع هذه الوحدة في كلمات قليلة</h2>
-  <p class="lead">REPLACE: ما يجهزه المشاركون قبل ذلك، والمختبرات غير المكتملة يمكن إكمالها في المنزل</p>
-  <aside class="notes">REPLACE: الحسابات أو التثبيتات أو القراءة التي يحتاجها المشاركون قبل الوحدة التالية</aside>
+<section class="slide dark" id="next">
+  <div class="kicker">غدًا</div>
+  <h2>من المخاطر إلى بيان قابلية التطبيق</h2>
+  <ul class="bullets">
+    <li>اقرأ ملف <span class="en">risk_register.xlsx</span>: ستة عشر خطرًا لمطايا على مصفوفة الإطار الوطني</li>
+    <li>احضر نطاقك وسياستك من اليوم: سنبني عليهما الأهداف</li>
+  </ul>
+  <aside class="notes"><p>من لم ينهِ النطاق أو السياسة لا يحتاجهما غدًا: مختبرات اليوم 2 تبدأ من ملفات معدّة.</p></aside>
 </section>
