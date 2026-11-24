@@ -1,0 +1,41 @@
+# أنظمة إدارة الذكاء الاصطناعي والتدقيق الداخلي
+
+> تبني نظام إدارة للذكاء الاصطناعي: النطاق والسياسة والأهداف وبيان قابلية التطبيق، ثم تدققه داخليًا بالمقابلات ومعاينة السجلات، وتحدد درجات الملاحظات وتصحح أسبابها. مقرر من أكاديمية سدايا، الرمز LDS-AIG-304، الإصدار 2027.1.0، بالعربية.
+
+كل شريحة عنوان مثل "#### [day1#slide-id] العنوان": استشهد بالشرائح بهذا المعرّف، وكل استشهاد رابط (slides/day1.html#slide-id). هذه الملفات هي ما يراه المشارك: لا ملاحظات المدرّب فيها ولا مفاتيح الإجابة.
+
+## المقرر
+
+- [صفحة المقرر](https://sdaiaacademy.github.io/lds-aig-304/index.md): نظرة عامة ونواتج التعلم والجدول والمختبرات؛ الصفحة نفسها https://sdaiaacademy.github.io/lds-aig-304/index.html
+- [المقرر كاملًا](https://sdaiaacademy.github.io/lds-aig-304/llms-full.txt): كل وحدة وجلسة وشريحة في ملف واحد، نحو 17,739 من الوحدات النصية
+- [أسئلة التدريب](https://sdaiaacademy.github.io/lds-aig-304/practice.html): أسئلة تختبر بها نفسك، مع تعليل بعد كل إجابة
+
+## الشرائح
+
+- [اليوم 1: منطق نظام الإدارة ونطاقه](https://sdaiaacademy.github.io/lds-aig-304/slides/day1.md): دورة التخطيط والتنفيذ والتحقق والتصحيح، والبنود التي تستدعي التقييم، والأدوار والنطاق، وسياسة الذكاء الاصطناعي في مطايا؛ الجلسات: منطق نظام الإدارة، الأدوار والأنظمة، النطاق والاستثناءات، سياسة الذكاء الاصطناعي؛ الصفحة: https://sdaiaacademy.github.io/lds-aig-304/slides/day1.html؛ نحو 5,985 من الوحدات النصية
+- [اليوم 2: الأهداف والضوابط وبيان قابلية التطبيق](https://sdaiaacademy.github.io/lds-aig-304/slides/day2.md): أهداف لها مالك وقياس، ومصفوفة كفاءة، ثم من سجل المخاطر إلى بيان قابلية التطبيق، وضوابط الخدمات المشتراة والوكيل وأدوات الموظفين، والمقابلة بكتالوج آخر؛ الجلسات: الأهداف والكفاءة، من المخاطر إلى بيان قابلية التطبيق، الخدمات المشتراة والوكيل وأدوات الموظفين، المقابلة بكتالوج آخر؛ الصفحة: https://sdaiaacademy.github.io/lds-aig-304/slides/day2.html؛ نحو 4,866 من الوحدات النصية
+- [اليوم 3: التدقيق الداخلي والتحسين](https://sdaiaacademy.github.io/lds-aig-304/slides/day3.md): برنامج تدقيق قائم على المخاطر، ومقابلات ومعاينة سجلات، ودرجات الملاحظات والتقرير، ثم السبب الجذري والإجراء التصحيحي ومراجعة الإدارة والضمان الخارجي؛ الجلسات: برنامج تدقيق قائم على المخاطر، المقابلات والعينات، درجات الملاحظات والتقرير، السبب الجذري والإجراء التصحيحي والضمان الخارجي؛ الصفحة: https://sdaiaacademy.github.io/lds-aig-304/slides/day3.html؛ نحو 4,846 من الوحدات النصية
+- [المشروع الختامي: حزمة مراجعة الإدارة والدفاع عنها](https://sdaiaacademy.github.io/lds-aig-304/slides/capstone.md): عشر دقائق للعرض وثماني دقائق للأسئلة أمام إدارة عليا تجريبية، يحدد فيها المشارك درجة دليل جديد يعرضه المقيِّم؛ الصفحة: https://sdaiaacademy.github.io/lds-aig-304/slides/capstone.html؛ نحو 1,317 من الوحدات النصية
+
+## المختبرات
+
+- [المختبر 1.1: خريطة البنود والتقييمات](https://sdaiaacademy.github.io/lds-aig-304/labs/D1_1_clause_map.md): اليوم 1، الجلسة 1، 35 دقيقة؛ الصفحة: https://sdaiaacademy.github.io/lds-aig-304/labs/D1_1_clause_map.html
+- [المختبر 1.2: سجل الأدوار والأنظمة](https://sdaiaacademy.github.io/lds-aig-304/labs/D1_2_roles.md): اليوم 1، الجلسة 2، 35 دقيقة؛ الصفحة: https://sdaiaacademy.github.io/lds-aig-304/labs/D1_2_roles.html
+- [المختبر 1.3: نطاق نظام الإدارة](https://sdaiaacademy.github.io/lds-aig-304/labs/D1_3_scope.md): اليوم 1، الجلسة 3، 35 دقيقة؛ الصفحة: https://sdaiaacademy.github.io/lds-aig-304/labs/D1_3_scope.html
+- [المختبر 1.4: سياسة الذكاء الاصطناعي لمطايا](https://sdaiaacademy.github.io/lds-aig-304/labs/D1_4_policy.md): اليوم 1، الجلسة 4، 35 دقيقة؛ الصفحة: https://sdaiaacademy.github.io/lds-aig-304/labs/D1_4_policy.html
+- [المختبر 2.1: الأهداف ومصفوفة الكفاءة](https://sdaiaacademy.github.io/lds-aig-304/labs/D2_1_objectives.md): اليوم 2، الجلسة 1، 35 دقيقة؛ الصفحة: https://sdaiaacademy.github.io/lds-aig-304/labs/D2_1_objectives.html
+- [المختبر 2.2: بيان قابلية التطبيق من السجل](https://sdaiaacademy.github.io/lds-aig-304/labs/D2_2_soa.md): اليوم 2، الجلسة 2، 35 دقيقة؛ الصفحة: https://sdaiaacademy.github.io/lds-aig-304/labs/D2_2_soa.html
+- [المختبر 2.3: ضوابط الموردين والوكيل وأدوات الموظفين](https://sdaiaacademy.github.io/lds-aig-304/labs/D2_3_suppliers.md): اليوم 2، الجلسة 3، 35 دقيقة؛ الصفحة: https://sdaiaacademy.github.io/lds-aig-304/labs/D2_3_suppliers.html
+- [المختبر 2.4: المقابلة بإطار NIST](https://sdaiaacademy.github.io/lds-aig-304/labs/D2_4_crosswalk.md): اليوم 2، الجلسة 4، 35 دقيقة؛ الصفحة: https://sdaiaacademy.github.io/lds-aig-304/labs/D2_4_crosswalk.html
+- [المختبر 3.1: برنامج التدقيق وخطة تدقيق](https://sdaiaacademy.github.io/lds-aig-304/labs/D3_1_programme.md): اليوم 3، الجلسة 1، 35 دقيقة؛ الصفحة: https://sdaiaacademy.github.io/lds-aig-304/labs/D3_1_programme.html
+- [المختبر 3.2: التدقيق بالمقابلات والعينات](https://sdaiaacademy.github.io/lds-aig-304/labs/D3_2_interviews.md): اليوم 3، الجلسة 2، 35 دقيقة؛ الصفحة: https://sdaiaacademy.github.io/lds-aig-304/labs/D3_2_interviews.html
+- [المختبر 3.3: الدرجات وتقرير التدقيق](https://sdaiaacademy.github.io/lds-aig-304/labs/D3_3_grading.md): اليوم 3، الجلسة 3، 35 دقيقة؛ الصفحة: https://sdaiaacademy.github.io/lds-aig-304/labs/D3_3_grading.html
+- [المختبر 3.4: السبب الجذري والإجراءات التصحيحية](https://sdaiaacademy.github.io/lds-aig-304/labs/D3_4_root_cause.md): اليوم 3، الجلسة 4، 35 دقيقة؛ الصفحة: https://sdaiaacademy.github.io/lds-aig-304/labs/D3_4_root_cause.html
+
+## ملفات السياق
+
+- [context/course.md](https://sdaiaacademy.github.io/lds-aig-304/context/course.md): المقرر كاملًا، لمساعد يقبل ملفًا مرفقًا، نحو 17,739 من الوحدات النصية
+- [context/day1.md](https://sdaiaacademy.github.io/lds-aig-304/context/day1.md): اليوم 1، نحو 5,985 من الوحدات النصية
+- [context/day2.md](https://sdaiaacademy.github.io/lds-aig-304/context/day2.md): اليوم 2، نحو 4,866 من الوحدات النصية
+- [context/day3.md](https://sdaiaacademy.github.io/lds-aig-304/context/day3.md): اليوم 3، نحو 4,846 من الوحدات النصية
+- [context/capstone.md](https://sdaiaacademy.github.io/lds-aig-304/context/capstone.md): المشروع الختامي، نحو 1,317 من الوحدات النصية
